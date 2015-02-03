@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.recetapp.ui.CrearRecetaController">
+   <top>
+      <GridPane prefHeight="90.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="60.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="470.0" minWidth="10.0" prefWidth="298.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.0" minWidth="10.0" prefWidth="341.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" text="Nombre:" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="nombreTextField" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" />
+            <Label alignment="TOP_LEFT" text="Para:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <Label text="Categoría:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="paraTextField" prefHeight="25.0" prefWidth="80.0">
+                     <FlowPane.margin>
+                        <Insets right="10.0" />
+                     </FlowPane.margin>
+                  </TextField>
+                  <ComboBox fx:id="paraComboBox" prefWidth="150.0" />
+               </children>
+            </FlowPane>
+            <ComboBox fx:id="categoriasComboBox" prefHeight="25.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <FlowPane alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label text="Tiempo total:">
+                     <FlowPane.margin>
+                        <Insets right="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <ComboBox fx:id="tiempoTotalMinutosComboBox" prefHeight="25.0" prefWidth="65.0" />
+                  <Label text="M">
+                     <padding>
+                        <Insets left="2.0" right="20.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="tiempoTotalSegundosComboBox" prefHeight="25.0" prefWidth="65.0" />
+                  <Label text="S">
+                     <FlowPane.margin>
+                        <Insets left="2.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </FlowPane>
+            <FlowPane alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Tiempo con Thermomix:">
+                     <FlowPane.margin>
+                        <Insets right="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <ComboBox fx:id="tiempoThermomixMinutosComboBox" prefHeight="25.0" prefWidth="65.0" />
+                  <Label text="M">
+                     <FlowPane.margin>
+                        <Insets left="2.0" right="20.0" />
+                     </FlowPane.margin>
+                  </Label>
+                  <ComboBox fx:id="tiempoThermomixSegundosComboBox" prefHeight="25.0" prefWidth="65.0" />
+                  <Label text="S">
+                     <FlowPane.margin>
+                        <Insets left="2.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </FlowPane>
+         </children>
+      </GridPane>
+   </top>
+   <bottom>
+      <FlowPane alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="crearButton" mnemonicParsing="false" onAction="#crearButtonActionPerformed" text="Crear">
+               <FlowPane.margin>
+                  <Insets right="10.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="cancelarButton" mnemonicParsing="false" onAction="#cancelarButtonActionPerformed" text="Cancelar">
+               <FlowPane.margin>
+                  <Insets right="10.0" />
+               </FlowPane.margin>
+            </Button>
+         </children>
+      </FlowPane>
+   </bottom>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tab0" text="Tab1">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <FlowPane alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="Sección:">
+                                       <FlowPane.margin>
+                                          <Insets left="10.0" right="5.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                    <TextField fx:id="seccionTextField" prefHeight="25.0" prefWidth="300.0" />
+                                 </children>
+                              </FlowPane>
+                              <Button fx:id="quitarSeccionButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="0.0" text="-" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </top>
+                     <center>
+                        <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <items>
+                              <TitledPane fx:id="ingredientesTable" animated="false" collapsible="false" prefHeight="423.0" prefWidth="346.0" text="Ingredientes">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <content>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <TableView fx:id="crearRecetaIngredientesTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <columns>
+                                              <TableColumn fx:id="ingredientesTableCantidadCol" prefWidth="75.0" text="Cantidad" />
+                                              <TableColumn fx:id="ingredientesTableMedidaCol" prefWidth="75.0" text="Medida" />
+                                                <TableColumn fx:id="ingredientesTableTipoCol" prefWidth="75.0" text="Tipo" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </center>
+                                       <bottom>
+                                          <FlowPane alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="315.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="ingredientesTableAnadirButton" mnemonicParsing="false" onAction="#anadirIngredienteActionPerformed">
+                                                   <FlowPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </FlowPane.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="28.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@./images/add_icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="ingredientesTableEditarButton" mnemonicParsing="false" onAction="#editarIngredienteActionPerformed" prefHeight="22.0" prefWidth="40.0">
+                                                   <FlowPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </FlowPane.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="28.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@./images/edit_icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="ingredientesTableEliminarButton" mnemonicParsing="false">
+                                                   <FlowPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </FlowPane.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="28.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@./images/delete_icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </FlowPane>
+                                       </bottom>
+                                    </BorderPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="instruccionesTable" animated="false" collapsible="false" prefHeight="423.0" prefWidth="346.0" text="Instrucciones">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <content>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <TableView fx:id="crearRecetaInstruccionesTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <columns>
+                                              <TableColumn fx:id="instruccionesTableOrdenCol" prefWidth="75.0" text="Orden" />
+                                              <TableColumn fx:id="instruccionesTableDescripcionCol" prefWidth="75.0" text="Descripción" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </center>
+                                       <bottom>
+                                          <FlowPane alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="315.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="instruccionesTableAnadirButton" mnemonicParsing="false">
+                                                   <FlowPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </FlowPane.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="28.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@./images/add_icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="instruccionesTableEditarButton" mnemonicParsing="false">
+                                                   <FlowPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </FlowPane.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="28.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@./images/edit_icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="instruccionesTableEliminarButton" mnemonicParsing="false">
+                                                   <FlowPane.margin>
+                                                      <Insets right="10.0" />
+                                                   </FlowPane.margin>
+                                                   <graphic>
+                                                      <ImageView fitHeight="28.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@./images/delete_icon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </FlowPane>
+                                       </bottom>
+                                    </BorderPane>
+                                 </content>
+                              </TitledPane>
+                           </items>
+                        </SplitPane>
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab text="+" />
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
