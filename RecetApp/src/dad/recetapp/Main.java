@@ -20,6 +20,7 @@ public class Main extends Application {
 	private static Stage editarRecetaStage;
 	private static Stage anadirIngredientesStage;
 	private static Stage editarIngredientesStage;
+	private static int p;
 
 	private AnchorPane rootLayout;
 
