@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.recetapp.ui.EditarInstruccionesController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <FlowPane alignment="CENTER_RIGHT" prefHeight="6.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="Guardar">
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#guardarActionPerformed" text="Guardar">
                      <FlowPane.margin>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                      </FlowPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Cancelar">
+                  <Button mnemonicParsing="false" onAction="#cancelarActionPerformed" text="Cancelar">
                      <FlowPane.margin>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                      </FlowPane.margin>
@@ -43,17 +44,17 @@
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="17.0" prefWidth="68.0" text="Descripción:" GridPane.rowIndex="1">
+                        <Label alignment="BOTTOM_RIGHT" prefHeight="17.0" prefWidth="68.0" text="Descripción:" GridPane.rowIndex="1" GridPane.valignment="TOP">
                            <GridPane.margin>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </GridPane.margin>
                         </Label>
-                        <TextField GridPane.columnIndex="1">
+                        <TextField fx:id="ordenTextField" promptText="Introduzca un número..." GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextArea prefHeight="70.0" prefWidth="338.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextArea fx:id="descripcionTextField" prefHeight="70.0" prefWidth="338.0" promptText="Descripción..." GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </GridPane.margin>

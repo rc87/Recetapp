@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -12,7 +13,7 @@
          <bottom>
             <FlowPane alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="anadirButton" mnemonicParsing="false" onAction="#anadirButtonActionPerformed" text="Añadir">
+                  <Button fx:id="anadirButton" defaultButton="true" mnemonicParsing="false" onAction="#anadirButtonActionPerformed" text="Añadir">
                      <FlowPane.margin>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                      </FlowPane.margin>
@@ -54,7 +55,7 @@
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </GridPane.margin>
                         </Label>
-                        <TextField fx:id="cantidadTextField" GridPane.columnIndex="1">
+                        <TextField fx:id="cantidadTextField" promptText="Introduzca un número..." GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                            </GridPane.margin>

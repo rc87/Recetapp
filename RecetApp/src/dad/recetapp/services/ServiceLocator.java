@@ -1,5 +1,11 @@
 package dad.recetapp.services;
 
+import dad.recetapp.services.impl.CategoriasService;
+import dad.recetapp.services.impl.MedidasService;
+import dad.recetapp.services.impl.RecetasService;
+import dad.recetapp.services.impl.TiposAnotacionesService;
+import dad.recetapp.services.impl.TiposIngredientesService;
+
 public class ServiceLocator {
 	
 	private static CategoriasService cs = new CategoriasService();
